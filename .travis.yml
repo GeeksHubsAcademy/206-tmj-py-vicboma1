@@ -1,0 +1,14 @@
+notifications:
+  email: false
+  slack: geekshubs:rrvY2RwjwpXwVTW3jjcW8JYg
+language: python
+sudo: false
+dist: trusty
+cache: false
+python:
+ - 3.6
+install: 
+ - pip install -e .
+ - git submodule update --init --recursive
+ - pip install pytest
+script: python -m pytest -vv tests/test_kata.py
